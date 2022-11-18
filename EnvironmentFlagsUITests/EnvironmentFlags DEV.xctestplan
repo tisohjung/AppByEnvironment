@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "B3CA668A-C364-41D9-967E-A7DC93EE2ED4",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:EnvironmentFlags.xcodeproj",
+      "identifier" : "5A078576292622770054D895",
+      "name" : "EnvironmentFlags"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:EnvironmentFlags.xcodeproj",
+        "identifier" : "5A078587292622780054D895",
+        "name" : "EnvironmentFlagsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

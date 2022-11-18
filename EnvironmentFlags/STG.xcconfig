@@ -1,0 +1,4 @@
+
+PRODUCT_BUNDLE_IDENTIFIER=com.test.EnvironmentFlags.stg
+PRODUCT_DISPLAY_NAME = Santa STG
+PRODUCT_NAME = Santa STG

@@ -1,0 +1,4 @@
+
+PRODUCT_BUNDLE_IDENTIFIER=com.test.EnvironmentFlags.dev
+PRODUCT_DISPLAY_NAME = Santa DEV
+PRODUCT_NAME = Santa DEV
