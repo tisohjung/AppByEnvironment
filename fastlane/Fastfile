@@ -1,0 +1,66 @@
+default_platform(:ios)
+
+config = {
+  project: 'EnvironmentFlags.xcodeproj',
+  dev: {
+    identifier: 'com.test.EnvironmentFlags.dev',
+    scheme: 'EnvironmentFlags DEV',
+  },
+  stg: {
+    identifier: 'com.test.EnvironmentFlags.stg',
+    scheme: 'EnvironmentFlags STG',
+  },
+  prd: {
+    identifier: 'com.test.EnvironmentFlags',
+    scheme: 'EnvironmentFlags',
+  }
+}
+
+platform :ios do
+  desc "Build all environment"
+  lane :all do
+    app()
+    app_dev()
+    app_stg()
+  end
+
+  desc "App Production"
+  lane :app do
+    build_app(
+      scheme: config[:prd][:scheme],
+      workspace: config[:workspace],
+      # configuration: build_configuration,
+      clean: true,
+      derived_data_path: "./output",
+      skip_package_ipa: true,
+      skip_archive: true,
+      destination: "generic/platform=iOS Simulator"
+    )
+  end
+  desc "App Staging"
+  lane :app_stg do
+    build_app(
+      scheme: config[:stg][:scheme],
+      workspace: config[:workspace],
+      # configuration: build_configuration,
+      clean: true,
+      derived_data_path: "./output_stg",
+      skip_package_ipa: true,
+      skip_archive: true,
+      destination: "generic/platform=iOS Simulator"
+    )
+  end
+  desc "App Dev"
+  lane :app_dev do
+    build_app(
+      scheme: config[:dev][:scheme],
+      workspace: config[:workspace],
+      # configuration: build_configuration,
+      clean: true,
+      derived_data_path: "./output_dev",
+      skip_package_ipa: true,
+      skip_archive: true,
+      destination: "generic/platform=iOS Simulator"
+    )
+  end
+end
